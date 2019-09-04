@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-crud-example",
+  "version": "1.0.0",
+  "description": "My smashing Nuxt.js project",
+  "author": "Oscar Montoya",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.8.1",
+    "@nuxtjs/axios": "^5.3.6",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
