@@ -1,6 +1,5 @@
 const i18n = require('./config/locales');
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */

@@ -4,6 +4,11 @@
 [Link tutorial next](https://itnext.io/quickly-building-restful-uis-in-nuxtjs-782bce539440)
 > My smashing Nuxt.js project
 
+## Start fakeserver
+```
+> cd server
+> npm run start
+```
 ## Build Setup
 
 ``` bash
