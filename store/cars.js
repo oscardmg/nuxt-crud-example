@@ -1,31 +1,31 @@
-import merge from "lodash.merge";
-import assign from 'lodash.assign';
+import merge from 'lodash.merge'
+import assign from 'lodash.assign'
 
 export const state = () => ({
   list: [],
-  car: {},
-});
+  car: {}
+})
 
 export const mutations = {
-  set(state, car) {
+  set (state, car) {
     state.list = car
   },
-  add(state, value) {
+  add (state, value) {
     merge(state.list, value)
   },
-  remove(state, {car}) {
+  remove (state, { car }) {
     state.list.filter(c => car.id !== c.id)
   },
-  mergeCars(state, form) {
+  mergeCars (state, form) {
     assign(state.car, form)
   },
-  setCars(state, form) {
+  setCars (state, form) {
     state.car = form
   }
-};
+}
 
 export const actions = {
-  async get({commit}) {
+  async get ({ commit }) {
     await this.$axios.get(`/cars`)
       .then((res) => {
         if (res.status === 200) {
@@ -33,7 +33,7 @@ export const actions = {
         }
       })
   },
-  async show({commit}, params) {
+  async show ({ commit }, params) {
     await this.$axios.get(`/cars/${params.car_id}`)
       .then((res) => {
         if (res.status === 200) {
@@ -41,22 +41,22 @@ export const actions = {
         }
       })
   },
-  async set({commit}, cars) {
+  async set ({ commit }, cars) {
     await commit('set', cars)
   },
-  async form({commit}, form) {
+  async form ({ commit }, form) {
     await commit('mergeCars', form)
   },
-  async add({commit}, car) {
+  async add ({ commit }, car) {
     await commit('add', car)
   },
-  create({commit}, params) {
-    return this.$axios.post(`/cars`, {car: params})
+  create ({ commit }, params) {
+    return this.$axios.post(`/cars`, { car: params })
   },
-  update({commit}, params) {
-    return this.$axios.put(`/cars/${params.id}`, {car: params})
+  update ({ commit }, params) {
+    return this.$axios.put(`/cars/${params.id}`, { car: params })
   },
-  delete({commit}, params) {
+  delete ({ commit }, params) {
     return this.$axios.delete(`/cars/${params.id}`)
   }
-};
+}

@@ -1,4 +1,4 @@
-const i18n = require('./config/locales');
+const i18n = require('./config/locales')
 export default {
   /*
   ** Headers of the page
@@ -28,9 +28,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/vue-notifications', ssr: false},
-    {src: '~/plugins/vee-validate'},
-    {src: '~/plugins/vue-moment'}
+    { src: '~/plugins/vue-notifications', ssr: false },
+    // {src: '~/plugins/vee-validate'},
+    { src: '~/plugins/vue-moment' }
   ],
   router: {
     middleware: ['auth']
@@ -43,9 +43,9 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: {url: '/auth/login', method: 'post', propertyName: 'jwt'},
-          logout: {url: '/auth/logout', method: 'post'},
-          user: {url: '/users/1', method: 'get', propertyName: 'user'}
+          login: { url: '/auth/login', method: 'post', propertyName: 'jwt' },
+          logout: { url: '/auth/logout', method: 'post' },
+          user: { url: '/users/1', method: 'get', propertyName: 'user' }
         }
       }
     }
@@ -59,9 +59,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
     ['nuxt-i18n', i18n]
   ],
